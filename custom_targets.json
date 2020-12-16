@@ -3,6 +3,7 @@
         "inherits": [
             "MCU_NRF52832"
         ],
-        "device_name": "nRF52832_xxAA"
+        "device_name": "nRF52832_xxAA",
+        "OUTPUT_EXT": "bin"
     }
 }
