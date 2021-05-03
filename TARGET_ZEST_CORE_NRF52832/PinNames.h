@@ -36,6 +36,8 @@
  * 
  */
 
+/* MBED TARGET LIST: ZEST_CORE_NRF52832 */
+
 #ifndef MBED_PINNAMES_H
 #define MBED_PINNAMES_H
 
@@ -51,79 +53,43 @@ typedef enum {
 } PinDirection;
 
 typedef enum {
-    p0  = 0,
-    p1  = 1,
-    p2  = 2,
-    p3  = 3,
-    p4  = 4,
-    p5  = 5,
-    p6  = 6,
-    p7  = 7,
-    p8  = 8,
-    p9  = 9,
-    p10 = 10,
-    p11 = 11,
-    p12 = 12,
-    p13 = 13,
-    p14 = 14,
-    p15 = 15,
-    p16 = 16,
-    p17 = 17,
-    p18 = 18,
-    p19 = 19,
-    p20 = 20,
-    p21 = 21,
-    p22 = 22,
-    p23 = 23,
-    p24 = 24,
-    p25 = 25,
-    p26 = 26,
-    p27 = 27,
-    p28 = 28,
-    p29 = 29,
-    p30 = 30,
-    p31 = 31,
+    P0_0  = 0,
+    P0_1  = 1,
+    P0_2  = 2,
+    P0_3  = 3,
+    P0_4  = 4,
+    P0_5  = 5,
+    P0_6  = 6,
+    P0_7  = 7,
 
-    P0_0  = p0,
-    P0_1  = p1,
-    P0_2  = p2,
-    P0_3  = p3,
-    P0_4  = p4,
-    P0_5  = p5,
-    P0_6  = p6,
-    P0_7  = p7,
+    P0_8  = 8,
+    P0_9  = 9,
+    P0_10 = 10,
+    P0_11 = 11,
+    P0_12 = 12,
+    P0_13 = 13,
+    P0_14 = 14,
+    P0_15 = 15,
 
-    P0_8  = p8,
-    P0_9  = p9,
-    P0_10 = p10,
-    P0_11 = p11,
-    P0_12 = p12,
-    P0_13 = p13,
-    P0_14 = p14,
-    P0_15 = p15,
+    P0_16 = 16,
+    P0_17 = 17,
+    P0_18 = 18,
+    P0_19 = 19,
+    P0_20 = 20,
+    P0_21 = 21,
+    P0_22 = 22,
+    P0_23 = 23,
 
-    P0_16 = p16,
-    P0_17 = p17,
-    P0_18 = p18,
-    P0_19 = p19,
-    P0_20 = p20,
-    P0_21 = p21,
-    P0_22 = p22,
-    P0_23 = p23,
+    P0_24 = 24,
+    P0_25 = 25,
+    P0_26 = 26,
+    P0_27 = 27,
+    P0_28 = 28,
+    P0_29 = 29,
+    P0_30 = 30,
+    P0_31 = 31,
 
-    P0_24 = p24,
-    P0_25 = p25,
-    P0_26 = p26,
-    P0_27 = p27,
-    P0_28 = p28,
-    P0_29 = p29,
-    P0_30 = p30,
-    P0_31 = p31,
-
-    RX_PIN_NUMBER  = P0_27,
-    TX_PIN_NUMBER  = P0_28,
-
-    // Zest J1 connector signal namings
+    /**** Zest connector signal namings (J1) ****/
     I2C1_SCL    = P0_25,
     I2C1_SDA    = P0_26,
     UART1_RX    = P0_27, // if R4 is mounted
@@ -151,44 +117,21 @@ typedef enum {
     DIO8        = P0_16,
     DIO10       = P0_18,
     DIO11       = P0_20,
-
-	// MOTHER_DAUGHTER signal
-    MD          = P0_22,
+    MD          = P0_22, // MOTHER_DAUGHTER signal
 
     // STDIO for console print
 #ifdef MBED_CONF_TARGET_STDIO_UART_TX
-    STDIO_UART_TX = MBED_CONF_TARGET_STDIO_UART_TX,
+    CONSOLE_TX = MBED_CONF_TARGET_STDIO_UART_TX,
 #else
-    STDIO_UART_TX = TX_PIN_NUMBER,
+    CONSOLE_TX = P0_28,
 #endif
 #ifdef MBED_CONF_TARGET_STDIO_UART_RX
-    STDIO_UART_RX = MBED_CONF_TARGET_STDIO_UART_RX,
+    CONSOLE_RX = MBED_CONF_TARGET_STDIO_UART_RX,
 #else
-    STDIO_UART_RX = RX_PIN_NUMBER,
+    CONSOLE_RX = P0_27,
 #endif
 
-    // Standardized LED namings
-    LED1    = P0_23,
-
-    // Standardized button namings
-    BUTTON1 = P0_24,
-
-    // Standardized signal names
-    SERIAL_TX   = STDIO_UART_TX, // FTDI on USB if R8 and R12 are mounted
-    SERIAL_RX   = STDIO_UART_RX, // FTDI on USB if R8 and R12 are mounted
-    USBTX       = TX_PIN_NUMBER, // FTDI on USB if R8 and R12 are mounted
-    USBRX       = RX_PIN_NUMBER, // FTDI on USB if R8 and R12 are mounted
-    I2C_SCL     = I2C1_SCL,
-    I2C_SDA     = I2C1_SDA,
-    SPI_MOSI    = SPI1_MOSI,
-    SPI_MISO    = SPI1_MISO,
-    SPI_SCK     = SPI1_SCK,
-    SPI_CS      = SPI1_CS,
-    PWM_OUT     = PWM1_OUT,
-
-    // USB Pins
-
-    // Debug pins
+    /**** DEBUG pins ****/
     //SYS_JTCK_SWCLK = PA_14,
     //SYS_JTDI = PA_15,
     SYS_JTDO_SWO = P0_18,
@@ -207,6 +150,10 @@ typedef enum {
     PullUp = 3,
     PullDefault = PullNone
 } PinMode;
+
+// Standardized LED and button names
+#define LED1    P0_23
+#define BUTTON1 P0_24
 
 #ifdef __cplusplus
 }
