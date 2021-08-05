@@ -4,6 +4,9 @@
             "MCU_NRF52832"
         ],
         "device_name": "nRF52832_xxAA",
+        "macros_add": [
+            "CONFIG_GPIO_AS_PINRESET"
+        ],
         "OUTPUT_EXT": "bin"
     }
 }
