@@ -8,7 +8,7 @@ In your project root directory:
 1.  Add the custom target to your project:
 
     ```shell
-    mbed add https://gitlab.com/catie_6tron/zest-core-nrf52832.git
+    mbed add https://github.com/catie-aq/mbed_zest-core-nrf52832.git
     ```
 
 2. Enable the custom target by adding or overwriting the `custom_targets.json` at the
